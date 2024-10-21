@@ -15,10 +15,10 @@ test: gowri_testing {
     column: id {
       field: users.id
     }
-    filters: [users.created_date: "2018"]
+    filters: [users.created_date: "2015"]
   }
   assert: users_id_is_expected {
-    expression: ${users.id}= 2 ;;
+    expression: ${users.id}= 1 ;;
   }
 }
 explore: billion_orders {
