@@ -10,6 +10,17 @@ datagroup: gowri_1_default_datagroup {
 
 persist_with: gowri_1_default_datagroup
 
+test: gowri_testing {
+  explore_source: users {
+    column: id {
+      field: users.id
+    }
+    filters: [users.created_date: "2018"]
+  }
+  assert: users_id_is_expected {
+    expression: ${users.id}= 2 ;;
+  }
+}
 explore: billion_orders {
   join: orders {
     type: left_outer
