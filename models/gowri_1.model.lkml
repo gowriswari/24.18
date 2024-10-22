@@ -29,7 +29,9 @@ explore: connection_reg_r3 {}
 
 explore: countries {}
 
-explore: customer {}
+explore: customer {
+
+}
 
 explore: day_of_week {}
 
@@ -45,6 +47,7 @@ explore: events {
     sql_on: ${events.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
+
 }
 
 explore: fakeorders {
@@ -63,7 +66,9 @@ explore: fakeorders {
 
 explore: fatal_error_user_derived_base {}
 
-explore: flights {}
+explore: flights {
+
+}
 
 explore: foo {}
 
@@ -76,11 +81,11 @@ explore: hundred_million_orders {
     relationship: many_to_one
   }
 
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
+ # join: users {
+ #   type: left_outer
+ #   sql_on: ${orders.user_id} = ${users.id} ;;
+  #  relationship: many_to_one
+ # }
 }
 
 explore: hundred_million_orders_wide {
